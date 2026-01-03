@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functions and Variable Scope</title>
+</head>
+<body>
+
+<h2>User Defined Function & Scope</h2>
+
+<button onclick="showScope()">Click Me</button>
+<p id="result"></p>
+
+<script>
+function showScope() {
+
+    var a = 10;
+    let b = 20;
+    const c = 30;
+
+    if (true) {
+        var x = 100;
+        let y = 200;
+        const z = 300;
+
+        document.getElementById("result").innerHTML =
+            "Inside block:<br>" +
+            "x = " + x + "<br>" +
+            "y = " + y + "<br>" +
+            "z = " + z;
+    }
+
+    console.log(x);
+
+}
+</script>
+
+</body>
+</html>

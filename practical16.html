@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Hidden Attribute</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            background-color: #f4f4f9;
+        }
+
+        #content-box {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border: 2px solid #6200ee;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #6200ee;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content-box">
+        <h3>Now you see me!</h3>
+        <p>This box is being controlled by the <code>hidden</code> attribute.</p>
+    </div>
+
+    <button id="toggle-btn">Hide Element</button>
+
+    <script>
+        const contentBox = document.getElementById('content-box');
+        const toggleBtn = document.getElementById('toggle-btn');
+
+        toggleBtn.addEventListener('click', () => {
+            contentBox.hidden = !contentBox.hidden;
+
+            if (contentBox.hidden) {
+                toggleBtn.textContent = 'Show Element';
+            } else {
+                toggleBtn.textContent = 'Hide Element';
+            }
+        });
+    </script>
+
+</body>
+</html>

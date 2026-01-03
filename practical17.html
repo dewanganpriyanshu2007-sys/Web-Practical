@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard and Form Events</title>
+</head>
+<body>
+
+<h2>Keyboard & Form Events Demo</h2>
+
+<form onsubmit="return submitForm()">
+    Name:
+    <input type="text" id="name"
+           onfocus="focusInput()"
+           onblur="blurInput()"
+           onkeyup="keyUpEvent()">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<p id="output"></p>
+
+<script>
+function keyUpEvent() {
+    document.getElementById("output").innerHTML =
+        "Key released while typing";
+}
+
+function focusInput() {
+    document.getElementById("output").innerHTML =
+        "Input field focused";
+}
+
+function blurInput() {
+    document.getElementById("output").innerHTML =
+        "Input field lost focus";
+}
+
+function submitForm() {
+    alert("Form Submitted Successfully");
+    return false;
+}
+</script>
+
+</body>
+</html>
